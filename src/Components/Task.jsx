@@ -1,11 +1,17 @@
 import React from 'react'
+import {FaTimes} from 'react-icons/fa'
 
-const Task = ({lists}) => {
-    console.log(lists['id'])
-    console.log(lists['task'])
-    console.log(lists)
+const Task = ({lists,onDelete}) => {
     return (
-          <h3>{lists.task}</h3>
+        <div className="task">
+          <h3>
+                {lists.task}
+                <FaTimes 
+                style={{color:'red',cursor:'pointer'}}
+                onClick={() => onDelete(lists.id)}
+                /> 
+          </h3>
+        </div>
     )
 }
 

@@ -1,11 +1,9 @@
 import React from 'react'
 import Task from './Task'
-const Tasks = ({lists}) => {
-    console.log(lists.id)
-    console.log(lists.task)
+const Tasks = ({lists,onDelete}) => {
     return (
         <div>
-            {lists.map((lists) => <Task key={lists.id} lists={lists}/>)}
+            {lists.map((lists) => <Task key={lists.id} lists={lists} onDelete={onDelete}/>)}
         </div>
     )
 }
